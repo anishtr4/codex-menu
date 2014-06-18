@@ -23,8 +23,8 @@ in menu item should be like
 
 'name' : 'link or function name'
 
-if u want to define a function use "funct_" before function name (eg: funct_demofunction() )
- 
+if u want to define a function use "funct_" before function name (**eg: funct_demofunction() **)
+
     $("body").magicmenu({
 	menuitem : {
         Home : 'form.html',
