@@ -40,14 +40,14 @@
                         e.preventDefault();
 
                     });
-                    $('.right').remove();
+                    $('.magic_menu').remove();
                     var y = (e.pageY - window.pageYOffset);
                     var x = (e.pageX - window.pageXOffset);
 
-                    var i = "<div class='right'><ul></ul></div>";
+                    var i = "<div class='magic_menu'><ul></ul></div>";
 
                     $(i).appendTo($('body'));
-                    $('.right').css({
+                    $('.magic_menu').css({
                         left: x,
                         top: y,
                     });
@@ -65,13 +65,13 @@
 
                             new_element = "<li><a href='" + val + "'>" + newi + "</a></li>";
                         }
-                        $(new_element).appendTo($('.right ul'));
+                        $(new_element).appendTo($('.magic_menu ul'));
                         if (ui_library == "yes") {
 
-                            $('.right').hide().show(animation, animation_speed);
+                            $('.magic_menu').hide().show(animation, animation_speed);
 
                         } else {
-                            $('.right').hide().slideDown(animation_speed);
+                            $('.magic_menu').hide().slideDown(animation_speed);
                         }
                     });
 
@@ -79,8 +79,8 @@
                     return false;
                 } else {
                     var target = $(event.target);
-                    if (!target.is(".right *, .right")) {
-                        $('.right').remove();
+                    if (!target.is(".magic_menu *, .magic_menu")) {
+                        $('.magic_menu').remove();
                     }
 
                 }
