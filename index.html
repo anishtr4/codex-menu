@@ -1,37 +1,134 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="Author" content="Mateusz Mania">
+
+  <title>Custome Context Menu</title>
+
 </head>
 <link rel="stylesheet" href="css/magic_menu.css" />
-<body >
-<div id="domd" style="width:800px; height:900px; background-color:#999;">
-</div>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
+  <style type='text/css'>
+html,body{height:100%;padding:0; margin:0;}
 
-<script type='text/javascript' src='js/jquery-1.9.1.js'></script>
+.container {
+    height:100%;
+}
+
+.fill{
+    width:25%;
+    height:100%;
+    min-height:100%;
+   
+    padding:10px;
+    color:#efefef;
+	float:left;
+	padding:0;
+	margin:0;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+
+  </style>
+  
+<body>
+<div class="container">
+    <div class="span5 fill" id="Demo1" style="background-color:#666666;">
+    XContext Menu Type1
+    <br>
+    Left Click
+    </div>
+    
+    <div class="span5 fill" id="Demo2" style="background-color:#999999;">
+  XContext Menu Type2
+  <br>
+   Right Click
+    </div>
+    <div class="span5 fill" id="Demo3" style="background-color:#CCCCCC;">
+    XContext Menu Type3
+    <br>
+    Left Click
+    </div>
+      <div class="span5 fill" id="Demo4" style="background-color:#000000;">
+     XContext Menu Type4
+     <br>
+     Right Click
+    </div>
+       </div>
+
+<script type='text/javascript' src='js/jquery.min.js'></script>
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript" src="js/rightbox.js"></script>
 
 <script>
 $(document).ready(function(){ 
-$("body").magicmenu({
+$("#Demo1").xcontext({
 	menuitem : {
         Home : 'form.html',
 		Nextpage : 'http://www.youtube.com',
 		Tottalpages : 'funct_newfunction()',
-		Find_us_on_facebook : 'http://www.facebook.com',
+		'Find us on facebook' : 'http://www.facebook.com',
 		Refresh : 'www.google.com',
 		Exit : 'www.google.com'
     },
-	jquery_ui :  'yes',
-	animation     : 'bounce',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
-	speed     : '1',
-    item_bg     : '#ffff',
-	item_hover_bg     : '#ffff',
+	mouseaction : 'left',
+	jquery_ui :  'no',
+	animation : 'slide',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
+	speed     : 'fast',
+
 
 }); 
+
+$("#Demo2").xcontext({
+	menuitem : {
+        News : 'form.html',
+		'Your Profile' : 'http://www.youtube.com',
+		Example : 'funct_newfunction()',
+		'Find us on Twitter' : 'http://www.facebook.com',
+		'Hack this' : 'www.google.com',
+		Exit : 'www.google.com'
+    },
+	mouseaction : 'right',
+	jquery_ui :  'yes',
+	animation : 'fold',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
+	speed     : 'slow',
+
+
+}); 
+$("#Demo3").xcontext({
+	menuitem : {
+        Account : 'form.html',
+		'Hack This' : 'http://www.youtube.com',
+		Tottalpages : 'funct_newfunction()',
+		'Find us on facebook' : 'http://www.facebook.com',
+		Refresh : 'www.google.com',
+		Exit : 'www.google.com'
+    },
+	mouseaction : 'left',
+	jquery_ui :  'yes',
+	animation : 'scale',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
+	speed     : 'slow',
+
+
+});
+$("#Demo4").xcontext({
+	menuitem : {
+        'Change passsword' : 'form.html',
+		'Your Profile' : 'http://www.youtube.com',
+		Example : 'funct_newfunction()',
+		'Find us on Twitter' : 'http://www.facebook.com',
+		'Hack this' : 'www.google.com',
+		Exit : 'www.google.com'
+    },
+	mouseaction : 'right',
+	jquery_ui :  'yes',
+	animation : 'bounce',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
+	speed     : 'fast',
+
+
+});  
 });
 
 function newfunction()

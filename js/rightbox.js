@@ -2,7 +2,7 @@
 //for more info contact me on :anishtr4@gmail.com
 (function ($) {
 
-    $.fn.magicmenu = function (options) {
+    $.fn.xcontext = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -14,45 +14,59 @@
                 Refresh: 'www.google.com',
                 Exit: 'www.google.com'
             },
+			mouseaction : 'right',
             jquery_ui: 'yes',
-            animation: 'slide',
-            /* if u are using jquery_ui(slide,fold,bounce,,scale) or (slideDown,show) */
-            speed: '300',
-            message: 'message',
+            animation: 'slide',     /* if u are using jquery_ui(slide,fold,bounce,scale) or (slideDown,show) */
+			speed     : '5000',
         }, options);
 
         return this.each(function () {
-            var menuitem_array = settings.menuitem;
-            ui_library = settings.jquery_ui;
-            animation = settings.animation;
-            animation_speed = settings.speed;
+     
+		
             var new_element;
 
 
 
             var $this = $(this);
 
-
-            $this.mousedown(function (e) {
-                if (e.button == 2) {
-
-                    $(document).bind('contextmenu', function (e) {
-                        e.preventDefault();
+  $(document).bind('contextmenu', function (e) {
+                        
+						 return false;
 
                     });
-                    $('.magic_menu').remove();
-                    var y = (e.pageY - window.pageYOffset);
-                    var x = (e.pageX - window.pageXOffset);
+            $this.bind('mousedown', function(e) {
+			var menuitem_array = settings.menuitem;
+            ui_library = settings.jquery_ui;
+            animation_speed = settings.speed;
+			mouseaction_ = settings.mouseaction;
+			animation = settings.animation;
+		        if(mouseaction_ == "right")
+				{
+					action = 2;
+				}
+				else
+				{
+					action = 0;
+				}
+		
+                if (e.button == action) {
 
-                    var i = "<div class='magic_menu'><ul></ul></div>";
+                  
+                    $('.xcontext_menu').remove();
+					
+                    var y = e.pageY ;
+                    var x = e.pageX ;
 
-                    $(i).appendTo($('body'));
-                    $('.magic_menu').css({
+                 
+					  $('body').append('<div class="xcontext_menu"><ul></ul></div>');
+                    $('.xcontext_menu').css({
                         left: x,
                         top: y,
                     });
+					
+					
                     jQuery.each(menuitem_array, function (i, val) {
-                        var newi = i.replace(/_/g, "&nbsp;");
+                        var newi = i;
                         value = val;
 
 
@@ -65,13 +79,16 @@
 
                             new_element = "<li><a href='" + val + "'>" + newi + "</a></li>";
                         }
-                        $(new_element).appendTo($('.magic_menu ul'));
+						
+                        $(new_element).appendTo($('.xcontext_menu ul'));
+						$('.xcontext_menu').hide();
                         if (ui_library == "yes") {
 
-                            $('.magic_menu').hide().show(animation, animation_speed);
+                            $('.xcontext_menu').show(animation, animation_speed);
 
                         } else {
-                            $('.magic_menu').hide().slideDown(animation_speed);
+							
+                            $('.xcontext_menu').slideDown(animation_speed);
                         }
                     });
 
@@ -79,8 +96,8 @@
                     return false;
                 } else {
                     var target = $(event.target);
-                    if (!target.is(".magic_menu *, .magic_menu")) {
-                        $('.magic_menu').remove();
+                    if (!target.is(".xcontext_menu *, .xcontext_menu")) {
+                        $('.xcontext_menu').remove();
                     }
 
                 }
