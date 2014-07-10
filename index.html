@@ -31,30 +31,48 @@ html,body{height:100%;padding:0; margin:0;}
 	text-align:center;
 }
 
+.info
+{
+	margin-top:50%;
+	position:relative;
+}
+
   </style>
   
 <body>
 <div class="container">
     <div class="span5 fill" id="Demo1" style="background-color:#666666;">
-    XContext Menu Type1
+   <div class="info">
+    XContext Menu Type1<br>
+    With "Slide" animation
     <br>
-    Left Click
+    Right Click Here
+    </div>
     </div>
     
     <div class="span5 fill" id="Demo2" style="background-color:#999999;">
-  XContext Menu Type2
+  <div class="info">
+  XContext Menu Type2<br>
+  With "Fold" animation
   <br>
-   Right Click
+   Right Click Here
+   </div>
     </div>
     <div class="span5 fill" id="Demo3" style="background-color:#CCCCCC;">
-    XContext Menu Type3
+    <div class="info">
+    XContext Menu Type3<br>
+     With "Zoom" animation
     <br>
-    Left Click
+    Left Click Here
+    </div>
     </div>
       <div class="span5 fill" id="Demo4" style="background-color:#000000;">
-     XContext Menu Type4
+    <div class="info">
+     XContext Menu Type4<br>
+     With "Bounce" animation
      <br>
-     Right Click
+     Right Click Here
+     </div>
     </div>
        </div>
 
@@ -73,7 +91,7 @@ $("#Demo1").xcontext({
 		Refresh : 'www.google.com',
 		Exit : 'www.google.com'
     },
-	mouseaction : 'left',
+	mouseaction : 'right',
 	jquery_ui :  'no',
 	animation : 'slide',/* if u are using jquery_ui(slide,fold,bounce,,scale)*/
 	speed     : 'fast',
