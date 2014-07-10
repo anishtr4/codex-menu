@@ -9,11 +9,11 @@ Any one who knows basic javascript or jquery can easily use this plugin
 
 
 
-![alt tag](https://raw.githubusercontent.com/anishtr4/Magic-menu/master/magicmenu.jpg)
+![alt tag](https://raw.githubusercontent.com/anishtr4/Magic-menu/master/xcontex.jpg)
 
 ## Basic usage
 
-$("body").magicmenu({});
+$("body").xcontext({});
 
 
 ## Settings
@@ -25,7 +25,7 @@ in menu item should be like
 
 if u want to define a function use "funct_" before function name (eg: funct_demofunction())
 
-    $("body").magicmenu({
+    $("body").xcontext({
 	menuitem : {
         Home : 'form.html',
 		Nextpage : 'http://www.youtube.com',
