@@ -1,4 +1,4 @@
-Magic-menu
+Xcontext-menu
 ==============
 
 Highly customizable light weight Right click menu plugin
