@@ -1,0 +1,9 @@
+{
+  "firebase": "magic-menu",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    ".*",
+    "**/node_modules/**"
+  ]
+}

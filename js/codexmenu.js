@@ -2,7 +2,7 @@
 //for more info contact me on :anishtr4@gmail.com
 (function ($) {
 
-    $.fn.xcontext = function (options) {
+    $.fn.codexmenu = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
